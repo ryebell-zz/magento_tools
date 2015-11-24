@@ -1,3 +1,12 @@
+<html>
+<style>
+body {
+    background-color: #00adef;
+}
+.rows {      
+  border: 1px solid black; 
+}
+</style>
 <?php
 
 require_once ("./app/Mage.php");
@@ -36,10 +45,11 @@ $data = $db->query('SELECT * FROM cron_schedule');
 
 $result = $data->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<ul>
+<body>
+<ul style="list-style-type: none;">
 <?php
 foreach ($result as $row) { ?>
-        <li><?php echo $row['schedule_id'] . " " . $row['job_code'] . " " . $row['status'] . " " . $row['messages'] . " " . $row['created_at'] . " " . $row['scheduled_at'] . " " . $row['executed_at'] . " " . $row['finished_at']; ?> </li>
+        <li><div class="rows"><?php echo $row['schedule_id'] . " " . $row['job_code'] . " " . $row['status'] . " " . $row['messages'] . " " . $row['created_at'] . " " . $row['scheduled_at'] . " " . $row['executed_at'] . " " . $row['finished_at']; ?></div></li></body>
 <?php
 }
 
