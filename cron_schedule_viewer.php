@@ -35,10 +35,13 @@ try {
 $data = $db->query('SELECT * FROM cron_schedule');
 
 $result = $data->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($result as $row) {
-	echo $row['schedule_id'] . " " . $row['job_code'] . " " . $row['status'] . " " . $row['messages'] . " " . $row['created_at'] . " " . $row['scheduled_at'] . " " . $row['executed_at'] . " " . $row['finished_at'] . "<br>";
-
+?>
+<ul>
+<?php
+foreach ($result as $row) { ?>
+        <li><?php echo $row['schedule_id'] . " " . $row['job_code'] . " " . $row['status'] . " " . $row['messages'] . " " . $row['created_at'] . " " . $row['scheduled_at'] . " " . $row['executed_at'] . " " . $row['finished_at']; ?> </li>
+<?php
 }
 
 ?>
+
