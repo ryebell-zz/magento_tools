@@ -4,7 +4,7 @@ body {
     background-color: #00adef;
 }
 .rows {      
-  border: 1px solid black; 
+    border: 1px solid black; 
 }
 </style>
 <?php
@@ -14,10 +14,11 @@ $app = Mage::app('default');
 
 $config  = Mage::getConfig()->getResourceConnectionConfig("default_setup");
 
-$dbinfo = array(“host” => $config->host,
-            “user” => $config->username,
-            “pass” => $config->password,
-            “dbname” => $config->dbname
+$dbinfo = array(
+    “host” => $config->host,
+    “user” => $config->username,
+    “pass” => $config->password,
+    “dbname” => $config->dbname
 );
 
 $hostname = $dbinfo[“host”];
@@ -49,9 +50,11 @@ $result = $data->fetchAll(PDO::FETCH_ASSOC);
 <ul style="list-style-type: none;">
 <?php
 foreach ($result as $row) { ?>
-        <li><div class="rows"><?php echo $row['schedule_id'] . " " . $row['job_code'] . " " . $row['status'] . " " . $row['messages'] . " " . $row['created_at'] . " " . $row['scheduled_at'] . " " . $row['executed_at'] . " " . $row['finished_at']; ?></div></li></body>
+    <li><div class="rows"><?php echo $row['schedule_id'] . " " . 
+    $row['job_code'] . " " . $row['status'] . " " . $row['messages'] .
+    " " . $row['created_at'] . " " . $row['scheduled_at'] . " " .
+    $row['executed_at'] . " " . $row['finished_at']; ?></div></li></body>
 <?php
 }
 
 ?>
-
