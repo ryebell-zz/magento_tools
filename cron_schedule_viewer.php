@@ -10,8 +10,7 @@ body {
 <?php
 
 require_once ("./app/Mage.php");
-$app = Mage::app('default');
-
+Mage::app();
 $config  = Mage::getConfig()->getResourceConnectionConfig("default_setup");
 
 $dbinfo = array(
