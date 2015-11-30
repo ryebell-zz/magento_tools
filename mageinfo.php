@@ -10,9 +10,8 @@ echo "<b>Version:</b> <br>" . $version . "<br>";
 echo "<b>Base URL:</b> <br>" . $base_url . "<br>";
 echo "<b>Installed Modules:</b> <br>";
 foreach ($modules as $module => $moduleSettings) {
-    echo $module . ' [' 
-    . ($moduleSettings->is('active') ? 'active' : 'disabled') . "] <br>";
+    echo $module . ' ['
+    . ($moduleSettings->is('active') ? 'Enabled' : 'Disabled') . "] <br>";
 }
 
 ?>
-
